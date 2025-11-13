@@ -1,0 +1,11 @@
+name: stock_trading_app
+
+# Define workspace packages for melos to manage. Adjust globs as you add packages.
+packages:
+  - packages/**
+  - .
+
+# Example scripts section (optional). You can run these with `melos run <name>`.
+scripts:
+  bootstrap:
+    run: melos bootstrap
