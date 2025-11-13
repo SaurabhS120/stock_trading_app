@@ -2,20 +2,27 @@ name: stock_trading_app
 description: A new Flutter project.
 
 publish_to: 'none'
-version: 1.0.2+1
+version: 1.0.2+2
 
 environment:
   sdk: ">=3.10.0-290.4.beta <4.0.0"
 
+workspace:
+  - packages/fl_chart_module
+  - packages/syncfusion_chart_module
+
 dependencies:
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.9.3
+  syncfusion_chart_module:
+    path: packages/syncfusion_chart_module
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   melos: ^7.3.0
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true
