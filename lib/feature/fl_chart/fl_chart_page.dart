@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class ChartPage extends StatelessWidget {
-  const ChartPage({super.key});
+class FlChartPage extends StatelessWidget {
+  const FlChartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chart'),
+        title: Text('FL Chart'),
       ),
       body: const Center(
-        child: Text('Chart Page'),
+        child: Text('FL Chart Page'),
       ),
     );
   }

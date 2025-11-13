@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'chart_page.dart';
+import 'feature/fl_chart/fl_chart_page.dart';
+import 'feature/syncfusion_chart/syncfusion_chart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,15 +14,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.red,
-        )
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.red,
+          )
+        ),
+        home: const MyHomePage(),
       ),
-      home: const MyHomePage(),
     );
   }
 }
@@ -47,11 +52,23 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ChartPage()),
+                  MaterialPageRoute(builder: (context) => const SyncfusionChartPage()),
                 );
               },
               child: const Text(
-                'Chart page',
+                'Syncfusion Chart page',
+              ),
+            ),
+            SizedBox(height: 16.sp,),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FlChartPage()),
+                );
+              },
+              child: const Text(
+                'FL Chart page',
               ),
             ),
           ],
