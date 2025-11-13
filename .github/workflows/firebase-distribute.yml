@@ -45,7 +45,9 @@ jobs:
           echo "$ANDROID_GOOGLE_SERVICES" | base64 --decode > android/app/google-services.json
 
       - name: Get dependencies
-        run: flutter pub get
+        run: |
+          dart pub global activate melos
+          melos bootstrap
 
       - name: Build release APK
         run: flutter build apk --release
