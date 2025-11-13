@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ANDROID_GOOGLE_SERVICES: ${{ secrets.ANDROID_GOOGLE_SERVICES }}
-      FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+      FIREBASE_APP_ID: ${{ vars.FIREBASE_APP_ID }}
       TESTERS_GROUP: ${{ secrets.TESTERS_GROUP }}
     steps:
       - name: Checkout code
