@@ -1,7 +1,8 @@
 name: syncfusion_chart_module
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+publish_to: 'none'
+resolution: workspace
 
 environment:
   sdk: ^3.10.0-290.4.beta

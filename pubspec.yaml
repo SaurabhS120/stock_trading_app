@@ -7,6 +7,10 @@ version: 1.0.2+1
 environment:
   sdk: ">=3.10.0-290.4.beta <4.0.0"
 
+workspace:
+  - packages/fl_chart_module
+  - packages/syncfusion_chart_module
+
 dependencies:
   flutter:
     sdk: flutter
@@ -18,7 +22,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   melos: ^7.3.0
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true
