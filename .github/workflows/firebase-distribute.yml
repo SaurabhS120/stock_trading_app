@@ -8,7 +8,10 @@ on:
 jobs:
   distribute:
     runs-on: ubuntu-latest
-
+    env:
+      ANDROID_GOOGLE_SERVICES: ${{ secrets.ANDROID_GOOGLE_SERVICES }}
+      FIREBASE_APP_ID: ${{ env.FIREBASE_APP_ID }}
+      TESTERS_GROUP: ${{ secrets.TESTERS_GROUP }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,7 +40,9 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       - name: Create Google Services file
-        run: ${{secrets.ANDROID_GOOGLE_SERVICES}} | base64 --decode > android/app/google-services.json
+        run: |
+          set -euo pipefail 
+          echo "$ANDROID_GOOGLE_SERVICES" | base64 --decode > android/app/google-services.json
 
       - name: Get dependencies
         run: flutter pub get
@@ -50,9 +55,10 @@ jobs:
 
       - name: Distribute to Firebase App Distribution
         run: |
+          set -euo pipefail 
           firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
-            --app "${{ secrets.FIREBASE_APP_ID }}" \
-            --groups "${{ env.TESTERS_GROUP }}" \
+            --app "$FIREBASE_APP_ID" \
+            --groups "$TESTERS_GROUP" \
             --release-notes "$(cat release_notes.txt)"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
