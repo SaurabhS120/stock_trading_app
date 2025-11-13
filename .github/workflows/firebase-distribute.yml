@@ -35,7 +35,7 @@ jobs:
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: ${{ runner.os }}-gradle-
-          
+
       - name: Create Google Services file
         run: ${{secrets.ANDROID_GOOGLE_SERVICES}} | base64 -decode > android/app/google-services.json
 
