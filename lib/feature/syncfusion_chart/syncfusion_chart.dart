@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_chart_module/syncfusion_chart_demo.dart';
 
 class SyncfusionChartPage extends StatelessWidget {
   const SyncfusionChartPage({super.key});
@@ -9,9 +10,7 @@ class SyncfusionChartPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Syncfusion Chart'),
       ),
-      body: const Center(
-        child: Text('Syncfusion Chart Page'),
-      ),
+      body: const SyncfusionChartDemo(),
     );
   }
 }
