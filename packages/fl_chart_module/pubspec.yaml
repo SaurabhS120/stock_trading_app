@@ -1,0 +1,24 @@
+name: fl_chart_module
+description: "A Flutter package for fl_chart integration."
+version: 0.0.1
+publish_to: 'none'
+resolution: workspace
+
+environment:
+  sdk: ^3.10.0-290.4.beta
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  fl_chart: ^1.1.1
+  equatable: ^2.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  assets:
+    - assets/data/bitcoin_2023-01-01_2023-12-31.csv
