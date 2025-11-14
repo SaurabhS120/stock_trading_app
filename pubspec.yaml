@@ -15,6 +15,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  fl_chart_module:
+    path: packages/fl_chart_module
   syncfusion_chart_module:
     path: packages/syncfusion_chart_module
 

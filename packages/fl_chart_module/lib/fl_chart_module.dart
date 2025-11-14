@@ -1,3 +1,2 @@
 library fl_chart_module;
-
-export 'package:fl_chart/fl_chart.dart';
+export 'candle_stick_chart_sample1.dart';

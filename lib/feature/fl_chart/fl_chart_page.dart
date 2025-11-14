@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:fl_chart_module/fl_chart_module.dart';
 class FlChartPage extends StatelessWidget {
   const FlChartPage({super.key});
 
@@ -9,9 +9,7 @@ class FlChartPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('FL Chart'),
       ),
-      body: const Center(
-        child: Text('FL Chart Page'),
-      ),
+      body: SingleChildScrollView(child: CandlestickChartSample1()),
     );
   }
 }
