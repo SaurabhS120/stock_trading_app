@@ -11,7 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  fl_chart: ^0.70.1
+  fl_chart: ^1.1.1
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -19,3 +20,5 @@ dev_dependencies:
   flutter_lints: ^6.0.0
 
 flutter:
+  assets:
+    - assets/data/bitcoin_2023-01-01_2023-12-31.csv
